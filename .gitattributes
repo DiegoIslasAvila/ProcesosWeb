@@ -1,2 +1,237 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+//Nos genera el Doctype de html5
+
+<!DOCTYPE html>
+
+<html lang=”en”>
+
+<head>
+
+<meta charset=”UTF-8″>
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+//Nos genera un hermano
+
+Código:
+
+h1+p
+
+Resultado:
+
+<h1></h1>
+
+<p></p>
+
+//Nos genera un hijo;
+
+//Código;
+
+h1>a
+
+//Resultado;
+
+<h1><a href=””></a></h1>
+
+ 
+
+//Desciende un nivel
+
+Código:
+
+h1>a^p
+
+//Explicación: generamos el nivel “h1” e introducimos un nivel “a” volvemos al nivel del “h1” (descendemos) y añadimos una “p”
+
+//Resultado;
+
+<h1><a href=””></a></h1>
+
+<p></p>
+
+*n -> Nos genera una cantidad de un elemento n veces
+
+Código:
+
+div*3
+
+Resultado:
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+ 
+
+() -> agrupaciones
+
+Código:
+
+(h1>a)+ul>li*3
+
+Resultado:
+
+<h1><a href=””></a></h1>
+
+<ul>
+
+<li></li>
+
+<li></li>
+
+<li></li>
+
+</ul>
+
+ 
+
+# -> genera el atributo id en una etiqueta
+
+Código:
+
+div#wrapper
+
+Resultado:
+
+<div id=”wrapper”></div>
+
+ 
+
+. -> genera el atributo class en una etiqueta
+
+Código:
+
+div.menu
+
+Resultado:
+
+<div class=”menu”></div>
+
+ 
+
+[x] -> genera el atributo x en una etiqueta más los atributos propios del elemento
+
+Código:
+
+img[title]
+
+Resultado:
+
+<img src=”” alt=”” title=””>
+
+ 
+
+$ -> numerar atributos de un elemento múltiples veces
+
+Código:
+
+ul>li.menu$*5
+
+Resultado:
+
+<ul>
+
+<li class=”menu1″></li>
+
+<li class=”menu2″></li>
+
+<li class=”menu3″></li>
+
+<li class=”menu4″></li>
+
+<li class=”menu5″></li>
+
+</ul>
+
+Si queremos que empiece por 001
+
+Código:
+
+ul>li.menu$$$*5
+
+Resultado:
+
+<ul>
+
+<li class=”menu001″></li>
+
+<li class=”menu002″></li>
+
+<li class=”menu003″></li>
+
+<li class=”menu004″></li>
+
+<li class=”menu005″></li>
+
+</ul>
+
+Explicación: tantos $ como caracteres queremos al empezar.
+
+ 
+
+@ -> modifica el orden de la herramienta $
+
+Código:
+
+ul>li.menu$@-*5
+
+Resultado:
+
+<ul>
+
+<li class=”menu5″></li>
+
+<li class=”menu4″></li>
+
+<li class=”menu3″></li>
+
+<li class=”menu2″></li>
+
+<li class=”menu1″></li>
+
+</ul>
+
+ 
+
+{} -> generar texto
+
+Código:
+
+a{inicio}
+
+Resultado:
+
+<a href=””>inicio</a>
+
+Otro ejemplo de a con un span en su interior
+
+Código:
+
+a>{inicio}+span{pagina}
+
+Resultado:
+
+<a href=””>inicio<span>pagina</span></a>
+
+ 
+
+loremn -> generar texto simulado lorem ipsum de n palabras
+
+Código:
+
+Lorem5
+
+Resultado:
+
+Lorem ipsum dolor sit amet.
